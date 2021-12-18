@@ -5,4 +5,4 @@ export default {
 	component: Logo
 }
 
-export const Basic = () => <Logo />
+export const Index = () => <Logo />
