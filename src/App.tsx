@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 
 import GlobalStyles from 'styles/global'
@@ -6,7 +7,11 @@ function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<Home />
+			<Router>
+				<Routes>
+					<Route index element={<Home />} />
+				</Routes>
+			</Router>
 		</>
 	)
 }
