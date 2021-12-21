@@ -36,7 +36,7 @@ const arr = [
 const Home = () => {
 	const [categories, setCategories] = useState(arr)
 
-	const handleItemCategorieSelected = (index: number) => {
+	const changeCategoryItemSelected = (index: number) => {
 		const Categories = categories.map((item) => ({ ...item, selected: false }))
 		Categories[index].selected = true
 		setCategories(Categories)
@@ -50,7 +50,7 @@ const Home = () => {
 					{categories.map((item, index) => (
 						<Category
 							key={index}
-							onClick={() => handleItemCategorieSelected(index)}
+							onClick={() => changeCategoryItemSelected(index)}
 							selected={item.selected}
 							name={item.name}
 						/>
