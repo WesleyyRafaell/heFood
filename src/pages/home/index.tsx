@@ -4,6 +4,7 @@ import * as S from './styles'
 import Header from 'components/Header'
 import Category from 'components/ItemCategory'
 import { useState } from 'react'
+import CardRecipe from 'components/CardRecipe'
 
 const arr = [
 	{
@@ -33,6 +34,8 @@ const arr = [
 	}
 ]
 
+const arr2 = [1, 1, 1, 1, 1]
+
 const Home = () => {
 	const [categories, setCategories] = useState(arr)
 
@@ -56,6 +59,12 @@ const Home = () => {
 						/>
 					))}
 				</S.ContainerCategories>
+				<S.TitleCategory>Sem lactose</S.TitleCategory>
+				<S.ContainerRecipes>
+					{arr2.map((item, index) => (
+						<CardRecipe key={index} />
+					))}
+				</S.ContainerRecipes>
 			</S.Wrapper>
 		</S.Container>
 	)
