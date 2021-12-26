@@ -53,6 +53,7 @@ const Home = () => {
 					{categories.map((item, index) => (
 						<Category
 							key={index}
+							action
 							onClick={() => changeCategoryItemSelected(index)}
 							selected={item.selected}
 							name={item.name}

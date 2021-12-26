@@ -22,7 +22,7 @@ export const Container = styled.div<CategoryProps>`
 	width: 218px;
 	height: 140px;
 	background: url(${img}) center center/cover;
-	cursor: pointer;
+	cursor: ${({ action }) => (action ? 'pointer' : '')};
 
 	${({ selected, theme }) => css`
 		${selected && wrapperModifiers.lineBottom(theme)}
