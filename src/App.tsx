@@ -5,6 +5,7 @@ import theme from './styles/theme'
 
 // components
 import Home from './pages/home'
+import DetailsRecipe from 'pages/DetailsRecipe'
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route index element={<Home />} />
+					<Route path="detailsrecipe" element={<DetailsRecipe />} />
 				</Routes>
 			</Router>
 		</ThemeProvider>

@@ -16,3 +16,19 @@ export const Menu = styled.div`
 	max-width: 1170px;
 	margin: -40px auto 0 auto;
 `
+export const Button = styled.button`
+	background: ${({ theme }) => theme.colors.secondary};
+	border: none;
+	border-radius: 20px;
+	font-size: 20px;
+	cursor: pointer;
+
+	a {
+		width: 225px;
+		height: 42px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+`

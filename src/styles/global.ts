@@ -7,6 +7,10 @@ const GlobalStyles = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
+	a{
+		text-decoration: none;
+	}
+
 	body {
 		font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 	}

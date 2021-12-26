@@ -1,16 +1,27 @@
 import * as S from './styles'
+import { Link } from 'react-router-dom'
 
 // components
 import Search from 'components/Search'
 import Logo from 'components/Logo'
 
-const Header = () => {
+type HeaderProps = {
+	back?: boolean
+}
+
+const Header = ({ back }: HeaderProps) => {
 	return (
 		<S.Container>
 			<S.Background />
 			<S.Menu>
 				<Logo />
-				<Search />
+				{!back ? (
+					<Search />
+				) : (
+					<S.Button>
+						<Link to="/"> Voltar</Link>{' '}
+					</S.Button>
+				)}
 			</S.Menu>
 		</S.Container>
 	)
