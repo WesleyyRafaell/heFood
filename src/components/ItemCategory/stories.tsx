@@ -1,8 +1,8 @@
-import Categorie from './index'
+import Category from './index'
 
 export default {
-	title: 'Categorie',
-	component: Categorie
+	title: 'Category',
+	component: Category
 }
 
-export const Index = () => <Categorie />
+export const Index = () => <Category />
