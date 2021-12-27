@@ -39,7 +39,11 @@ const DetailsRecipe = () => {
 		<S.Container>
 			<Header back />
 			<S.Block>
-				<InformationRecipe />
+				<InformationRecipe
+					title="Bolo de frigideira"
+					minutes={14}
+					portions={3}
+				/>
 				<S.ContainerCategories>
 					{categories.map((item, index) => (
 						<Category key={index} selected={item.selected} name={item.name} />
@@ -47,10 +51,10 @@ const DetailsRecipe = () => {
 				</S.ContainerCategories>
 				<S.ContainerPreparation>
 					<S.BoxPreparation>
-						<BoxInformation />
+						<BoxInformation title="Ingredientes" />
 					</S.BoxPreparation>
 					<S.BoxPreparation>
-						<BoxInformation />
+						<BoxInformation title="Modo de preparo" />
 					</S.BoxPreparation>
 				</S.ContainerPreparation>
 			</S.Block>

@@ -1,9 +1,13 @@
 import * as S from './styles'
 
-const BoxInformation = () => {
+export type BoxInformationProps = {
+	title: string
+}
+
+const BoxInformation = ({ title }: BoxInformationProps) => {
 	return (
 		<S.Container>
-			<S.Title>Ingredientes</S.Title>
+			<S.Title>{title}</S.Title>
 			<S.List>
 				<S.ItemList>1 ovo</S.ItemList>
 				<S.ItemList>1 xícara (chá) de aveia em flocos</S.ItemList>

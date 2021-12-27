@@ -63,7 +63,7 @@ const Home = () => {
 				<S.TitleCategory>Sem lactose</S.TitleCategory>
 				<S.ContainerRecipes>
 					{arr2.map((item, index) => (
-						<CardRecipe key={index} />
+						<CardRecipe title="Bolo" minutes={15} portions={2} key={index} />
 					))}
 				</S.ContainerRecipes>
 			</S.Wrapper>

@@ -5,20 +5,28 @@ import { Link } from 'react-router-dom'
 import time from 'imgs/food.png'
 import food from 'imgs/food.png'
 
-const CardRecipe = () => {
+export type CardRecipeProps = {
+	title: string
+	minutes: number
+	portions: number
+}
+
+const CardRecipe = ({ title, minutes, portions }: CardRecipeProps) => {
 	return (
 		<Link to="detailsrecipe">
 			<S.Container>
 				<S.Box>
-					<S.Title>Massa fit</S.Title>
+					<S.Title>{title}</S.Title>
 					<S.ContainerDetails>
 						<S.BoxDetails>
 							<S.Icon src={time} />
-							<S.Text>15 min</S.Text>
+							<S.Text> {minutes} min</S.Text>
 						</S.BoxDetails>
 						<S.BoxDetails>
 							<S.Icon src={food} />
-							<S.Text>5 porcoes</S.Text>
+							<S.Text>
+								{portions === 1 ? `${portions} porção` : `${portions} porções`}
+							</S.Text>
 						</S.BoxDetails>
 					</S.ContainerDetails>
 				</S.Box>
