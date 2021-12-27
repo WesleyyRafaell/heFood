@@ -3,6 +3,7 @@ import Header from 'components/Header'
 import InformationRecipe from 'components/InformationRecipe'
 import Category from 'components/ItemCategory'
 import { useState } from 'react'
+import BoxInformation from 'components/BoxInformation'
 
 const arr = [
 	{
@@ -44,6 +45,14 @@ const DetailsRecipe = () => {
 						<Category key={index} selected={item.selected} name={item.name} />
 					))}
 				</S.ContainerCategories>
+				<S.ContainerPreparation>
+					<S.BoxPreparation>
+						<BoxInformation />
+					</S.BoxPreparation>
+					<S.BoxPreparation>
+						<BoxInformation />
+					</S.BoxPreparation>
+				</S.ContainerPreparation>
 			</S.Block>
 		</S.Container>
 	)
