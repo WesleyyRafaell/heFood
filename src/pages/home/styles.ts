@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
 	max-width: 1170px;
 	margin: auto;
 `
-
 export const ContainerCategories = styled.div`
 	margin-top: 20px;
 	display: grid;
@@ -25,4 +24,9 @@ export const ContainerRecipes = styled.div`
 	grid-template-columns: repeat(4, 276.9px);
 	gap: 20px;
 	margin-top: 58px;
+`
+export const ContainerLoading = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 90px;
 `

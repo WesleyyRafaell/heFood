@@ -1,10 +1,12 @@
+import { useEffect, useState } from 'react'
 import * as S from './styles'
+import { ListAllRecipes } from 'services/recipe.service'
 
 // components
 import Header from 'components/Header'
 import Category from 'components/ItemCategory'
-import { useState } from 'react'
 import CardRecipe from 'components/CardRecipe'
+import Loading from 'components/Loading'
 
 const arr = [
 	{
@@ -34,10 +36,39 @@ const arr = [
 	}
 ]
 
-const arr2 = [1, 1, 1, 1, 1]
+type RecipeInfo = {
+	id: number
+	attributes: {
+		name: string
+		DurationTime: number
+		PortionSize: number
+		photo: {
+			data: {
+				attributes: {
+					formats: {
+						small: {
+							url: string
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 const Home = () => {
 	const [categories, setCategories] = useState(arr)
+	const [recipes, setRecipes] = useState([])
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		;(async () => {
+			const result = await ListAllRecipes()
+			if (!result) return
+			setRecipes(result)
+			setLoading(false)
+		})()
+	}, [])
 
 	const changeCategoryItemSelected = (index: number) => {
 		const Categories = categories.map((item) => ({ ...item, selected: false }))
@@ -48,25 +79,42 @@ const Home = () => {
 	return (
 		<S.Container>
 			<Header />
-			<S.Wrapper>
-				<S.ContainerCategories>
-					{categories.map((item, index) => (
-						<Category
-							key={index}
-							action
-							onClick={() => changeCategoryItemSelected(index)}
-							selected={item.selected}
-							name={item.name}
-						/>
-					))}
-				</S.ContainerCategories>
-				<S.TitleCategory>Sem lactose</S.TitleCategory>
-				<S.ContainerRecipes>
-					{arr2.map((item, index) => (
-						<CardRecipe title="Bolo" minutes={15} portions={2} key={index} />
-					))}
-				</S.ContainerRecipes>
-			</S.Wrapper>
+			{loading ? (
+				<S.ContainerLoading>
+					<Loading />
+				</S.ContainerLoading>
+			) : (
+				<S.Wrapper>
+					<S.ContainerCategories>
+						{categories.map((item, index) => (
+							<Category
+								key={index}
+								action
+								onClick={() => changeCategoryItemSelected(index)}
+								selected={item.selected}
+								name={item.name}
+							/>
+						))}
+					</S.ContainerCategories>
+					<S.TitleCategory>Sem lactose</S.TitleCategory>
+					<S.ContainerRecipes>
+						{recipes.map(
+							({
+								attributes: { name, PortionSize, DurationTime, photo },
+								id
+							}: RecipeInfo) => (
+								<CardRecipe
+									key={id}
+									title={name}
+									minutes={DurationTime}
+									portions={PortionSize}
+									photo={photo.data.attributes.formats.small.url}
+								/>
+							)
+						)}
+					</S.ContainerRecipes>
+				</S.Wrapper>
+			)}
 		</S.Container>
 	)
 }

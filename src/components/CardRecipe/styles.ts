@@ -2,21 +2,23 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	width: 276.9px;
-	height: 131px;
 	border: 1px solid #bcbcbc;
 	border-radius: 8.1px;
 	display: flex;
 	align-items: flex-start;
 	padding: 10px 13.5px;
 	cursor: pointer;
+	display: flex;
+	flex-direction: column;
 `
 
 export const Box = styled.div`
-	flex: 1;
+	display: flex;
+	margin-top: 20px;
 `
 
 export const Title = styled.p`
-	font-size: 26px;
+	font-size: 19px;
 	color: ${({ theme }) => theme.colors.primary};
 	font-weight: 700;
 `
