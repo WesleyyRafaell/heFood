@@ -1,8 +1,10 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { CategoryProps } from '.'
 
-const img =
-	'https://diaonline.ig.com.br/wp-content/uploads/2020/03/comida-natural-anapolis_capa-e1583930288656-1024x650.jpg'
+type ContainerProps = {
+	selected?: boolean
+	action?: boolean
+	image: string
+}
 
 const wrapperModifiers = {
 	lineBottom: (theme: DefaultTheme) => css`
@@ -18,10 +20,10 @@ const wrapperModifiers = {
 	`
 }
 
-export const Container = styled.div<CategoryProps>`
+export const Container = styled.div<ContainerProps>`
 	width: 218px;
 	height: 140px;
-	background: url(${img}) center center/cover;
+	background: url(${({ image }) => image}) center center/cover;
 	cursor: ${({ action }) => (action ? 'pointer' : '')};
 
 	${({ selected, theme }) => css`

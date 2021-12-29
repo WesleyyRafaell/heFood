@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as S from './styles'
 import { ListAllRecipes } from 'services/recipe.service'
+import { ListAllCategories } from 'services/category.service'
 
 // components
 import Header from 'components/Header'
@@ -8,35 +9,7 @@ import Category from 'components/ItemCategory'
 import CardRecipe from 'components/CardRecipe'
 import Loading from 'components/Loading'
 
-const arr = [
-	{
-		id: 1,
-		name: 'teste1',
-		selected: true
-	},
-	{
-		id: 2,
-		name: 'teste2',
-		selected: false
-	},
-	{
-		id: 3,
-		name: 'teste3',
-		selected: false
-	},
-	{
-		id: 4,
-		name: 'teste4',
-		selected: false
-	},
-	{
-		id: 5,
-		name: 'teste5',
-		selected: false
-	}
-]
-
-type RecipeInfo = {
+type RecipeApiInfo = {
 	id: number
 	attributes: {
 		name: string
@@ -56,23 +29,74 @@ type RecipeInfo = {
 	}
 }
 
+type CategoryApiInfo = {
+	id: number
+	attributes: {
+		name: string
+		image: {
+			data: {
+				attributes: {
+					url: string
+				}
+			}
+		}
+	}
+}
+
+type Category = {
+	id: number
+	name: string
+	selected: boolean
+	image: string
+}
+
 const Home = () => {
-	const [categories, setCategories] = useState(arr)
+	const [categories, setCategories] = useState<Category[]>([])
+	const [nameCategory, setNameCategory] = useState('')
 	const [recipes, setRecipes] = useState([])
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		;(async () => {
-			const result = await ListAllRecipes()
-			if (!result) return
-			setRecipes(result)
+		const getInitialDataFromApi = async () => {
+			const resultRecipes = await ListAllRecipes()
+			const resultCategories = await ListAllCategories()
+
+			if (!resultRecipes && !resultCategories) return
+
+			const categories = formatArrayCategories(resultCategories)
+
+			setInitialData(resultRecipes, categories)
 			setLoading(false)
-		})()
+		}
+
+		getInitialDataFromApi()
 	}, [])
 
-	const changeCategoryItemSelected = (index: number) => {
+	const setInitialData = (recipes: [], categories: Category[]) => {
+		setNameCategory(categories[0].name)
+		setCategories(categories)
+		setRecipes(recipes)
+	}
+
+	const formatArrayCategories = (resultCategories: []) => {
+		const newArrayCategories = resultCategories.map((item: CategoryApiInfo) => {
+			return {
+				id: item.id,
+				name: item.attributes.name,
+				image: item.attributes.image.data.attributes.url,
+				selected: false
+			}
+		})
+
+		newArrayCategories[0].selected = true
+
+		return newArrayCategories
+	}
+
+	const changeCategoryItemSelected = (index: number, name: string) => {
 		const Categories = categories.map((item) => ({ ...item, selected: false }))
 		Categories[index].selected = true
+		setNameCategory(name)
 		setCategories(Categories)
 	}
 
@@ -88,21 +112,22 @@ const Home = () => {
 					<S.ContainerCategories>
 						{categories.map((item, index) => (
 							<Category
-								key={index}
+								key={item.id}
 								action
-								onClick={() => changeCategoryItemSelected(index)}
+								onClick={() => changeCategoryItemSelected(index, item.name)}
 								selected={item.selected}
 								name={item.name}
+								image={item.image}
 							/>
 						))}
 					</S.ContainerCategories>
-					<S.TitleCategory>Sem lactose</S.TitleCategory>
+					<S.TitleCategory>{nameCategory}</S.TitleCategory>
 					<S.ContainerRecipes>
 						{recipes.map(
 							({
 								attributes: { name, PortionSize, DurationTime, photo },
 								id
-							}: RecipeInfo) => (
+							}: RecipeApiInfo) => (
 								<CardRecipe
 									key={id}
 									title={name}

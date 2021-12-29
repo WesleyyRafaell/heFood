@@ -44,11 +44,11 @@ const DetailsRecipe = () => {
 					minutes={14}
 					portions={3}
 				/>
-				<S.ContainerCategories>
+				{/* <S.ContainerCategories>
 					{categories.map((item, index) => (
 						<Category key={index} selected={item.selected} name={item.name} />
 					))}
-				</S.ContainerCategories>
+				</S.ContainerCategories> */}
 				<S.ContainerPreparation>
 					<S.BoxPreparation>
 						<BoxInformation title="Ingredientes" />
