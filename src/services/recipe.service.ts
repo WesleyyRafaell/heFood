@@ -9,3 +9,13 @@ export const ListAllRecipes = async () => {
 		console.log('error', error)
 	}
 }
+
+export const getRecipe = async (id: string | undefined) => {
+	try {
+		const result = await api.get(`recipes/${id}?populate=*`)
+		const { data } = result.data
+		return data
+	} catch (error) {
+		console.log('error', error)
+	}
+}

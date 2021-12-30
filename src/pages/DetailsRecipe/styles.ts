@@ -18,3 +18,8 @@ export const ContainerPreparation = styled.div`
 export const BoxPreparation = styled.div`
 	margin-bottom: 80px;
 `
+export const ContainerLoading = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 90px;
+`

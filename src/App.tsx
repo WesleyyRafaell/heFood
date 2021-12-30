@@ -14,7 +14,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route index element={<Home />} />
-					<Route path="detailsrecipe" element={<DetailsRecipe />} />
+					<Route path="detailsrecipe/:id" element={<DetailsRecipe />} />
 				</Routes>
 			</Router>
 		</ThemeProvider>

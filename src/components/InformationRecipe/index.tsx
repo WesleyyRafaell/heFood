@@ -3,23 +3,26 @@ import * as S from './styles'
 import food from 'imgs/food.png'
 import time from 'imgs/time.png'
 import separate from 'imgs/separate.png'
+import { returnImage } from 'utils/returnImage'
 
 export type InformationRecipeProps = {
 	title: string
 	minutes: number
 	portions: number
+	photo: string
 }
 
 const InformationRecipe = ({
 	title,
 	minutes,
-	portions
+	portions,
+	photo
 }: InformationRecipeProps) => {
 	return (
 		<S.Container>
 			<S.TitleCategory>{title}</S.TitleCategory>
 			<S.ContainerImage>
-				<S.Image src="https://media.discordapp.net/attachments/855429663677087805/924670608619483196/image_3.jpg?width=964&height=413" />
+				<S.Image src={returnImage(photo)} />
 			</S.ContainerImage>
 			<S.ContainerBoxInfo>
 				<S.BoxInfo>

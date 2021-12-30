@@ -1,5 +1,6 @@
 import * as S from './styles'
 import { Link } from 'react-router-dom'
+
 import { returnImage } from 'utils/returnImage'
 
 // imgs
@@ -7,15 +8,22 @@ import time from 'imgs/food.png'
 import food from 'imgs/food.png'
 
 export type CardRecipeProps = {
+	idItem: number
 	title: string
 	minutes: number
 	portions: number
 	photo: string
 }
 
-const CardRecipe = ({ title, minutes, portions, photo }: CardRecipeProps) => {
+const CardRecipe = ({
+	idItem,
+	title,
+	minutes,
+	portions,
+	photo
+}: CardRecipeProps) => {
 	return (
-		<Link to="detailsrecipe">
+		<Link to={`/detailsrecipe/${idItem}`}>
 			<S.Container>
 				<S.Title>{title}</S.Title>
 				<S.Box>

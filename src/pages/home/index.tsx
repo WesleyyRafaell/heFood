@@ -130,6 +130,7 @@ const Home = () => {
 							}: RecipeApiInfo) => (
 								<CardRecipe
 									key={id}
+									idItem={id}
 									title={name}
 									minutes={DurationTime}
 									portions={PortionSize}
