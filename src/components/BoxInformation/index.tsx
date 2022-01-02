@@ -2,7 +2,7 @@ import * as S from './styles'
 
 export type BoxInformationProps = {
 	title: string
-	itens: []
+	itens: string[]
 }
 
 const BoxInformation = ({ title, itens }: BoxInformationProps) => {

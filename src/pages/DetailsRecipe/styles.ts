@@ -8,10 +8,19 @@ export const Block = styled.div`
 `
 export const ContainerCategories = styled.div`
 	margin-top: 74.8px;
+`
+
+export const TitleCategories = styled.h4`
+	margin-bottom: 20px;
+	color: ${({ theme }) => theme.colors.primary};
+`
+
+export const BoxCategories = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 218px);
 	gap: 20px;
 `
+
 export const ContainerPreparation = styled.div`
 	margin-top: 169px;
 `
