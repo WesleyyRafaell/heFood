@@ -68,7 +68,7 @@ const DetailsRecipe = () => {
 
 	useEffect(() => {
 		const getInitialData = async () => {
-			const result = await getRecipe(id)
+			const result = await getRecipe(Number(id))
 			if (!result) return
 			const recipeData = createRecipeDataFromApi(result)
 			const categoriesData = await formattingArrayCategories(

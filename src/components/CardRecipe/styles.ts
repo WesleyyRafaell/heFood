@@ -2,14 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	width: 276.9px;
+	min-height: 141.89px;
 	border: 1px solid #bcbcbc;
 	border-radius: 8.1px;
 	display: flex;
+	flex-direction: column;
 	align-items: flex-start;
+	justify-content: space-between;
 	padding: 10px 13.5px;
 	cursor: pointer;
 	display: flex;
-	flex-direction: column;
 `
 
 export const Box = styled.div`

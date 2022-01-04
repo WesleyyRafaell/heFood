@@ -10,7 +10,7 @@ export const ListAllRecipes = async () => {
 	}
 }
 
-export const getRecipe = async (id: string | undefined) => {
+export const getRecipe = async (id: number | undefined) => {
 	try {
 		const result = await api.get(`recipes/${id}?populate=*`)
 		const { data } = result.data

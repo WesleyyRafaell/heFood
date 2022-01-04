@@ -10,7 +10,7 @@ export const ListAllCategories = async () => {
 	}
 }
 
-export const getCategory = async (id: number | undefined) => {
+export const getCategory = async (id: number) => {
 	try {
 		const result = await api.get(`categories/${id}?populate=*`)
 		const { data } = result.data
