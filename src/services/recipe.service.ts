@@ -22,7 +22,7 @@ export const getRecipe = async (id: number | undefined) => {
 
 export const searchRecipe = async (query: string) => {
 	try {
-		const result = await api.get(`recipes?filters[name][$contains]=${query}`)
+		const result = await api.get(`recipes?filters[name][$containsi]=${query}`)
 		const { data } = result.data
 		return data
 	} catch (error) {

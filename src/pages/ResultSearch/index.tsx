@@ -21,21 +21,21 @@ const ResultSearch = () => {
 	const [recipes, setRecipes] = useState<Recipe[]>([])
 	const [loading, setLoading] = useState(false)
 	const query = useQuery()
-	const newQuery = query.get('search')
+	const querySearch = query.get('search')
 
 	useEffect(() => {
 		const handleSearch = async () => {
 			setLoading(true)
 
-			if (!newQuery) return
+			if (!querySearch) return
 
-			const result = await searchRecipe(newQuery)
+			const result = await searchRecipe(querySearch)
 			setRecipes(result)
 			setLoading(false)
 		}
 
 		handleSearch()
-	}, [newQuery])
+	}, [querySearch])
 
 	return (
 		<S.Container>

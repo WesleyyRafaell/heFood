@@ -17,11 +17,10 @@ const Header = ({ back }: HeaderProps) => {
 				<Link to="/">
 					<Logo />
 				</Link>
-				{!back ? (
-					<Search />
-				) : (
+				<Search />
+				{back && (
 					<S.Button>
-						<Link to="/"> Voltar</Link>{' '}
+						<Link to="/"> Home</Link>{' '}
 					</S.Button>
 				)}
 			</S.Menu>
