@@ -12,7 +12,7 @@ export type CardRecipeProps = {
 	title: string
 	minutes: number
 	portions: number
-	photo: string
+	photo?: string
 }
 
 const CardRecipe = ({
@@ -39,7 +39,7 @@ const CardRecipe = ({
 							</S.Text>
 						</S.BoxDetails>
 					</S.ContainerDetails>
-					<S.Image src={returnImage(photo)} />
+					{photo && <S.Image src={returnImage(photo)} />}
 				</S.Box>
 			</S.Container>
 		</Link>

@@ -6,6 +6,7 @@ import theme from './styles/theme'
 // components
 import Home from './pages/home'
 import DetailsRecipe from 'pages/DetailsRecipe'
+import ResultSearch from 'pages/ResultSearch'
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Routes>
 					<Route index element={<Home />} />
 					<Route path="detailsrecipe/:id" element={<DetailsRecipe />} />
+					<Route path="search" element={<ResultSearch />} />
 				</Routes>
 			</Router>
 		</ThemeProvider>

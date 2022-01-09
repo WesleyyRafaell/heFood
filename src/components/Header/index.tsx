@@ -14,7 +14,9 @@ const Header = ({ back }: HeaderProps) => {
 		<S.Container>
 			<S.Background />
 			<S.Menu>
-				<Logo />
+				<Link to="/">
+					<Logo />
+				</Link>
 				{!back ? (
 					<Search />
 				) : (

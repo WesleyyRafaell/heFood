@@ -19,3 +19,13 @@ export const getRecipe = async (id: number | undefined) => {
 		console.log('error', error)
 	}
 }
+
+export const searchRecipe = async (query: string) => {
+	try {
+		const result = await api.get(`recipes?filters[name][$contains]=${query}`)
+		const { data } = result.data
+		return data
+	} catch (error) {
+		console.log('error', error)
+	}
+}

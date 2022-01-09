@@ -2,27 +2,31 @@ import styled from 'styled-components'
 
 export const Container = styled.div``
 
-export const Wrapper = styled.div`
+export const Block = styled.div`
 	max-width: 1170px;
-	margin: auto;
+	margin: 80px auto;
 `
-export const ContainerCategories = styled.div`
-	margin-top: 20px;
-	display: grid;
-	grid-template-columns: repeat(5, 218px);
-	gap: 50px 20px;
-`
-export const TitleCategory = styled.h2`
-	font-size: 39px;
-	text-align: center;
-	margin-top: 86px;
+export const Title = styled.h1`
+	display: inline;
 	color: ${({ theme }) => theme.colors.primary};
 `
 
+export const Text = styled.h3`
+	display: inline;
+	margin-left: 10px;
+	font-size: 23.8px;
+	color: #544d4d;
+`
+export const ContainerMessage = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 210px;
+`
 export const ContainerRecipes = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 276.9px);
-	gap: 50px 20px;
+	gap: 20px;
 	margin-top: 58px;
 `
 export const ContainerLoading = styled.div`

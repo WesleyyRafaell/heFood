@@ -6,12 +6,25 @@ export const Container = styled.div`
 	height: 53px;
 	background: ${({ theme }) => theme.colors.grayLight};
 	border-radius: 20px;
+	overflow: hidden;
 `
 export const BoxIcon = styled.div`
 	width: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-right: 10px;
+	cursor: pointer;
+	background: ${({ theme }) => theme.colors.primary};
+
+	a {
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 `
 
 export const Input = styled.input`
