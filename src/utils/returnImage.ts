@@ -1,3 +1,3 @@
 export const returnImage = (path: string) => {
-	return `http://localhost:1337${path}`
+	return `https://hefood-api.herokuapp.com/${path}`
 }
