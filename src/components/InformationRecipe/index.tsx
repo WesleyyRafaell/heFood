@@ -3,7 +3,6 @@ import * as S from './styles'
 import food from 'imgs/food.png'
 import time from 'imgs/time.png'
 import separate from 'imgs/separate.png'
-import { returnImage } from 'utils/returnImage'
 
 export type InformationRecipeProps = {
 	title: string
@@ -22,7 +21,7 @@ const InformationRecipe = ({
 		<S.Container>
 			<S.TitleCategory>{title}</S.TitleCategory>
 			<S.ContainerImage>
-				<S.Image src={returnImage(photo)} />
+				<S.Image src={photo} />
 			</S.ContainerImage>
 			<S.ContainerBoxInfo>
 				<S.BoxInfo>

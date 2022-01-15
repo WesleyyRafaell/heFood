@@ -1,4 +1,3 @@
-import { returnImage } from 'utils/returnImage'
 import * as S from './styles'
 
 export type CategoryProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -16,12 +15,7 @@ const Category = ({
 	...rest
 }: CategoryProps) => {
 	return (
-		<S.Container
-			selected={selected}
-			image={returnImage(image)}
-			action={action}
-			{...rest}
-		>
+		<S.Container selected={selected} image={image} action={action} {...rest}>
 			<S.BackgroundOverlay>
 				<S.Text>{name}</S.Text>
 			</S.BackgroundOverlay>

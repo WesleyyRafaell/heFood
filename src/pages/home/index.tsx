@@ -89,8 +89,8 @@ const Home = () => {
 			)
 
 			const data = await Promise.all(resultArray)
-			const recipes = formatArrayRecipes(data)
 
+			const recipes = formatArrayRecipes(data)
 			return recipes
 		} catch (error) {
 			console.log('error', error)
@@ -104,6 +104,7 @@ const Home = () => {
 	}
 
 	const formatArrayRecipes = (resultRecipes: RecipeApiInfo[]) => {
+		console.log('oiii', resultRecipes)
 		const newArrayRecipes = resultRecipes.map((item) => {
 			return {
 				id: item.id,
@@ -113,7 +114,7 @@ const Home = () => {
 				photo: item.attributes.photo.data.attributes.url
 			}
 		})
-
+		// console.log('oiii', newArrayRecipes)
 		return newArrayRecipes
 	}
 

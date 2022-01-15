@@ -1,8 +1,6 @@
 import * as S from './styles'
 import { Link } from 'react-router-dom'
 
-import { returnImage } from 'utils/returnImage'
-
 // imgs
 import time from 'imgs/food.png'
 import food from 'imgs/food.png'
@@ -39,7 +37,7 @@ const CardRecipe = ({
 							</S.Text>
 						</S.BoxDetails>
 					</S.ContainerDetails>
-					{photo && <S.Image src={returnImage(photo)} />}
+					{photo && <S.Image src={photo} />}
 				</S.Box>
 			</S.Container>
 		</Link>
