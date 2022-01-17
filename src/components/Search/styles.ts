@@ -7,6 +7,12 @@ export const Container = styled.div`
 	background: ${({ theme }) => theme.colors.grayLight};
 	border-radius: 20px;
 	overflow: hidden;
+	@media (max-width: 934px) {
+		margin-top: 20.4px;
+	}
+	@media (max-width: 534px) {
+		width: 100%;
+	}
 `
 export const BoxIcon = styled.div`
 	width: 50px;

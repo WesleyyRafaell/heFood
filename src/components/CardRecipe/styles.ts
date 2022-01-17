@@ -12,6 +12,13 @@ export const Container = styled.div`
 	padding: 10px 13.5px;
 	cursor: pointer;
 	display: flex;
+	@media (max-width: 894px) {
+		width: 370px;
+		align-items: center;
+	}
+	@media (max-width: 542px) {
+		width: 100%;
+	}
 `
 
 export const Box = styled.div`

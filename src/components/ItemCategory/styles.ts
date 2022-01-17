@@ -20,6 +20,15 @@ const wrapperModifiers = {
 	`
 }
 
+const wrapperModifiersResponsive = {
+	boxShadow: () => css`
+		box-shadow: 5.5px 7px 6.7px #ef436b;
+		&::after {
+			display: none;
+		}
+	`
+}
+
 export const Container = styled.div<ContainerProps>`
 	width: 218px;
 	height: 140px;
@@ -29,6 +38,14 @@ export const Container = styled.div<ContainerProps>`
 	${({ selected, theme }) => css`
 		${selected && wrapperModifiers.lineBottom(theme)}
 	`}
+
+	@media (max-width: 714px) {
+		min-width: 218px;
+		margin-right: 10px;
+		${({ selected }) => css`
+			${selected && wrapperModifiersResponsive.boxShadow()}
+		`}
+	}
 `
 
 export const BackgroundOverlay = styled.div`
