@@ -27,9 +27,13 @@ export const ContainerCategories = styled.div`
 		grid-template-columns: auto;
 		display: flex;
 		overflow-x: scroll;
-		height: 170px;
-		margin: 30px;
+		height: 140px;
 	}
+
+	/* @media (max-width: 375px) {
+		min-width: 150px;
+		height: 110px;
+	} */
 `
 export const TitleCategory = styled.h2`
 	font-size: 39px;

@@ -46,6 +46,11 @@ export const Container = styled.div<ContainerProps>`
 			${selected && wrapperModifiersResponsive.boxShadow()}
 		`}
 	}
+
+	@media (max-width: 375px) {
+		min-width: 150px;
+		height: 110px;
+	}
 `
 
 export const BackgroundOverlay = styled.div`

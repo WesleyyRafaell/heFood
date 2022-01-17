@@ -22,6 +22,9 @@ export const BoxIcon = styled.div`
 	margin-right: 10px;
 	cursor: pointer;
 	background: ${({ theme }) => theme.colors.primary};
+	@media (max-width: 534px) {
+		min-width: 50px;
+	}
 
 	a {
 		width: 100%;
@@ -39,6 +42,9 @@ export const Input = styled.input`
 	border: none;
 	outline: none;
 	font-size: 17.5px;
+	@media (max-width: 534px) {
+		font-size: 15px;
+	}
 
 	::placeholder,
 	::-webkit-input-placeholder {
