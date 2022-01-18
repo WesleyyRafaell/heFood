@@ -8,6 +8,9 @@ export const Container = styled.div`
 	border-radius: 60px;
 	padding: 42.8px 109px;
 	min-height: 320px;
+	@media (max-width: 484px) {
+		padding: 42.8px 39px;
+	}
 `
 
 export const Title = styled.h3`

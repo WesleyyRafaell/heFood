@@ -22,7 +22,7 @@ export const Menu = styled.div`
 		padding: 0 50px;
 	}
 
-	@media (max-width: 934px) {
+	@media (max-width: 952px) {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -43,3 +43,4 @@ export const Button = styled.button`
 		color: #fff;
 	}
 `
+export const Wrapper = styled.div``

@@ -18,6 +18,12 @@ export const ContainerImage = styled.div`
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	@media (max-width: 964px) {
+		width: 100%;
+	}
+	@media (max-width: 576px) {
+		height: auto;
+	}
 `
 
 export const Image = styled.img`
@@ -34,6 +40,11 @@ export const ContainerBoxInfo = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin: 10px auto 0 auto;
+	@media (max-width: 576px) {
+		flex-direction: column;
+		width: 80%;
+		height: 150px;
+	}
 `
 
 export const BoxInfo = styled.div`
@@ -48,6 +59,10 @@ export const Icon = styled.img``
 
 export const Separator = styled.img`
 	height: 80px;
+	@media (max-width: 576px) {
+		width: 110px;
+		height: 1px;
+	}
 `
 
 export const Text = styled.p`
