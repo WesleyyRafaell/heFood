@@ -104,7 +104,6 @@ const Home = () => {
 	}
 
 	const formatArrayRecipes = (resultRecipes: RecipeApiInfo[]) => {
-		console.log('oiii', resultRecipes)
 		const newArrayRecipes = resultRecipes.map((item) => {
 			return {
 				id: item.id,
@@ -114,7 +113,7 @@ const Home = () => {
 				photo: item.attributes.photo.data.attributes.url
 			}
 		})
-		// console.log('oiii', newArrayRecipes)
+
 		return newArrayRecipes
 	}
 
@@ -177,16 +176,14 @@ const Home = () => {
 					<S.TitleCategory>{nameCategory}</S.TitleCategory>
 					<S.ContainerRecipes>
 						{recipes.map(({ name, PortionSize, DurationTime, photo, id }) => (
-							<>
-								<CardRecipe
-									key={id}
-									idItem={id}
-									title={name}
-									minutes={DurationTime}
-									portions={PortionSize}
-									photo={photo}
-								/>
-							</>
+							<CardRecipe
+								key={id}
+								idItem={id}
+								title={name}
+								minutes={DurationTime}
+								portions={PortionSize}
+								photo={photo}
+							/>
 						))}
 					</S.ContainerRecipes>
 				</S.Wrapper>

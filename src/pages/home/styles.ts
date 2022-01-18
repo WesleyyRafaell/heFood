@@ -5,11 +5,12 @@ export const Container = styled.div``
 export const Wrapper = styled.div`
 	max-width: 1170px;
 	margin: auto;
+	padding: 30px 0;
 	@media (max-width: 1153px) {
-		padding: 0 50px;
+		padding: 30px 50px;
 	}
 	@media (max-width: 360px) {
-		padding: 0 10px;
+		padding: 30px 10px;
 	}
 `
 export const ContainerCategories = styled.div`
