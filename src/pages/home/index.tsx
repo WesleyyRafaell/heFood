@@ -67,7 +67,7 @@ const Home = () => {
 
 	const getInitialDataFromApi = async () => {
 		const resultCategories = await ListAllCategories()
-		const resultRecipes = await getRecipesFromCategoryId(1)
+		const resultRecipes = await getRecipesFromCategoryId(9)
 
 		if (!resultRecipes || !resultCategories) return
 
